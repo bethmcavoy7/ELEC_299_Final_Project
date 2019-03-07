@@ -1,0 +1,46 @@
+// ELEC 299 Final Competetition Notes
+
+
+		Ideas:
+		
+
+NO HUMAN INTERVENTION
+
+	Movement:
+Have cases for each type of reading for the light sensors
+---- i.e. if only left see dark, move slightly left so that it stays on lines
+
+	Turning:
+Use Encoders to turn a number of degrees:
+---- would both or only 1 wheel turning help?
+---- with only 1 wheel, could have either both or 2 motor on
+
+	Stopping:
+Move backwards slightly when stopping?
+---- Would help 
+
+Only Force motors to 0
+---- no guess work, could try and predict times where stopping is needed, 
+	 could be self corrected
+
+
+	 
+	 
+	 
+	 
+		Questions:
+
+	IR Beacon:
+What is this IR beacon? 
+How does it tell the robots/how do the determine their locations?
+What ASCII Symbols are being transmitted? and whY?
+
+	ANSWER:
+	Sends out a char that says which starting location you're at
+
+
+	Tracking Distance:
+How do we wanna do this? Encoders? Photo-sensors?
+
+
+
