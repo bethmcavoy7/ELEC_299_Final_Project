@@ -1,0 +1,179 @@
+numbers are for the intersections
+Left robot
+{
+BALL 7
+forward 6
+	ball
+backward 6
+	drop
+	
+BALL 1
+forward 1
+at 2 
+turnleft
+forward 1
+	ball
+backward 1
+at 2
+turnleft
+forward 1
+	drop
+	
+BALL 13
+forward 3
+at 4
+turnright
+forward 3
+	ball
+backward 3
+at 4
+turnright
+forward 3
+	drop
+	
+BALL 4
+forward 4
+at 5
+turnleft 
+forward 1
+	ball
+backward 1
+at 2
+turnleft
+forward 4
+	drop 
+
+BALL 5
+forward 5
+at 6
+turnleft 
+forward 1
+	ball
+backward 1
+at 2
+turnleft
+forward 5
+	drop
+}
+
+Center robot
+{
+BALL 8
+forward 6
+	ball
+backward 6
+	drop
+	
+BALL 2
+forward 2
+at 3
+turnleft
+forward 2
+	ball
+backward 2
+at 3
+turnleft
+forward 2
+	drop
+	
+BALL 14
+forward 2
+at 3
+turnright
+forward 2
+	ball
+backward 2
+at 3
+turnright
+forward 2
+	drop
+	
+BALL 6
+forward 5
+at 6
+turnleft
+forward 1
+at 2
+turnright
+	ball
+turnright
+forward 1
+at 2
+turnright
+forward 5
+	drop
+	
+BALL 10
+forward 5
+at 6
+turnright
+forward 1
+at 2
+turnleft
+	ball
+turnleft
+forward 1
+at 2
+turnleft
+forward 5
+	drop
+
+}
+
+Right robot
+{
+BALL 9
+forward 6
+	ball
+backward 6
+	drop
+	
+BALL 3
+forward 3
+at 4
+turnleft
+forward 3
+	ball
+backward 3
+at 4
+turnleft
+forward 3
+	drop
+	
+BALL 15
+forward 1
+at 2
+turnright
+forward 1
+	ball
+backward 1
+at 2
+turnright
+forward 1
+	drop
+	
+BALL 11
+forward 5
+at 6
+turnright
+forward 1
+	ball
+backward 1
+at 2
+turnright
+forward 5
+	drop
+	
+BALL 12
+forward 4
+at 5
+turnright 
+forward 1
+	ball
+backward 1
+at 2
+turnright
+forward 4
+	drop 
+}
+
