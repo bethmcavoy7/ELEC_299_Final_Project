@@ -231,6 +231,56 @@ void whichStart() {
   }
 }
 
+
+
+
+#define convert 11.25
+
+
+void turn(int deg) // negative 180 to 180 (left is neg.)
+{
+  deg = deg/convert;
+  deg = deg*3;
+  int count = 0;
+
+  bool left, templeft;
+  bool right, tempright;
+  if (deg <0)
+  {
+    digitalWrite(motorR, LOW);
+    digitalWrite(motorL, HIGH);
+  }
+  else
+  {
+    digitalWrite(motorR, HIGH);
+    digitalWrite(motorL, LOW);
+  }
+  
+  analogWrite(speedR, right_speed);
+  analogWrite(speedL, left_speed);
+    
+  while (deg > count)
+  {
+    left = digitalRead(encodeL);
+    right = digitalRead(encodeR);
+    if (left != templeft)
+    {
+      count++;
+    }
+    if (right != tempright)
+    {
+      count++;
+    }
+    templeft = left;
+    tempright = right;
+  } 
+  analogWrite(speedR, 0);
+  analogWrite(speedL, 0);
+
+   
+
+}
+
 void setup() {
   //Declarations
   Serial.begin(9600);
@@ -279,4 +329,3 @@ switch(cycle){
 
   
 }
-
