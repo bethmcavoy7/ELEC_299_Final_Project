@@ -55,7 +55,7 @@ int   theChar     = 0;
 int   start_position = 0;
 
 //Make robot go backwards
-void backup() {
+void backwards() {
   digitalWrite(motorR, LOW);
   analogWrite(speedR, 155);
   digitalWrite(motorL, LOW);
@@ -114,7 +114,7 @@ void fullTurn(){
 //Collision Detection Code
 /*void ReactBumpers() { //Need to revise for the competition
   if (!digitalRead(bumpL) && !digitalRead(bumpR)) {
-    Backup();
+    backwards();
     delay(1000);
     digitalWrite(motorL, HIGH);
     digitalWrite(motorR, LOW);
@@ -123,7 +123,7 @@ void fullTurn(){
     delay(1500);
   } 
   else if (digitalRead(bumpL) && !digitalRead(bumpR)) {
-    Backup();
+    backwards();
     delay(1000);
     digitalWrite(motorL, LOW);
     digitalWrite(motorR, HIGH);
@@ -132,7 +132,7 @@ void fullTurn(){
     delay(1000);
   } 
   else if (!digitalRead(bumpL) && digitalRead(bumpR)){
-    Backup();
+    backwards();
     delay(1000);
     digitalWrite(motorL, HIGH);
     digitalWrite(motorR, LOW);
@@ -213,21 +213,22 @@ void grab() {
   }
 }
 
-//Determines the starting position of the robot, need to write
-//void whichStart() {
-//  int no_start = 0;
-//  while(no_start == 0){
-//   if IR sensor reads L
-//      start_position = 1;
-//      no_start = 1;
-//   else if if IR sensor reads C
-//      start_position = 2;
-//      no_start = 1;
-//   else if IR sensor reads R
-//      start_position = 3;
-//      no_start = 1;
-//  }
-//}
+/*Determines the starting position of the robot, need to write
+int whichStart() {
+  int no_start = 0;
+  while(no_start == 0){
+   if IR sensor reads L
+      start_position = 1;
+      no_start = 1;
+   else if if IR sensor reads C
+      start_position = 2;
+      no_start = 1;
+   else if IR sensor reads R
+      start_position = 3;
+      no_start = 1;
+  return start_position;
+  }
+}*/
 
 
 
@@ -328,9 +329,492 @@ void grabbb()
   servo2Tilt.write(up);
 }
 
+int planB()
+{
+ /*use ir front
+ if (nothing to the left && something to the right)
+    start_position=1
+ else if (something to the left && nothing to the right)
+    start_position=3
+ else
+    start_position=2
+ return start_position
+ */
+ 
+}
+void leftPath()
+{
+	//BALL 7
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	if (bumpL==1 && bumpR==1)
+		grab()
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	if (bumpers hit)
+		dropball()	
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}
+	//BALL 1
+	forward()
+	left()
+	forward()
+	forward()
+	if (bumpL==1 && bumpR==1)
+		grab()
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}	backward()
+	forward()
+	forward()
+	right()
+	forward()
+	if (bumpers hit)
+		dropball()	
+	else
+	{
+		backward()
+		//adjust
+		forward()
+	}
+		//BALL 13
+	forward()
+	forward()
+	forward()
+	right()
+	forward()
+	forward()
+	forward()
+	forward()
+	if (bumpL==1 && bumpR==1)
+		grab()
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}	
+	forward()
+	forward()
+	forward()
+	forward()
+	left()
+	forward()
+	forward()
+	forward()
+	if (bumpers hit)
+		dropball()	
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}		
+	//BALL 4
+	forward()
+	forward()
+	forward()
+	forward()
+	left()
+	forward()
+	forward()
+	if (bumpL==1 && bumpR==1)
+		grab()
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}	
+	forward()
+	forward()
+	right()
+	forward()
+	forward()
+	forward()
+	forward()
+	if (bumpers hit)
+		dropball()	
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}
+	//BALL 5
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	left() 
+	forward()
+	forward()
+	if (bumpL==1 && bumpR==1)
+		grab()
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}	
+	forward()
+	forward()
+	right()
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	if (bumpers hit)
+		dropball()	
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}
+}
 
+void centerPath()
+{
+	//BALL 8
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	if (bumpL==1 && bumpR==1)
+		grab()
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	if (bumpers hit)
+		dropball()	
+	else 
+		backward()
+		//adjust
+		forward()
+	//BALL 2
+	forward()
+	forward()
+	left()
+	forward()
+	forward()
+	forward()
+	if (bumpL==1 && bumpR==1)
+		grab()
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}	
+	forward()
+	forward()
+	forward()
+	right()
+	forward()
+	forward()
+	if (bumpers hit)
+		dropball()	
+	else 
+	{
+		backward()
+		//adjust
+		forward()	
+	}
+	//BALL 14
+	forward()
+	forward()
+	right()
+	forward()
+	forward()
+	forward()
+	if (bumpL==1 && bumpR==1)
+		grab()
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}	backward()
+	forward()
+	forward()
+	forward()
+	left()
+	forward()
+	forward()
+	if (bumpers hit)
+		dropball()	
+	else 
+	{
+		backward()
+		//adjust
+		forward()	
+	}
+	//BALL 6
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	left()
+	forward()
+	forward()
+	right()
+	forward()
+	if (bumpL==1 && bumpR==1)
+		grab()
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}	
+	forward()
+	left()
+	forward()
+	forward()
+	right()
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	if (bumpers hit)
+		dropball()	
+	else 
+	{
+		backward()
+		//adjust
+		forward()	
+	}
+	//BALL 10
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	right()
+	forward()
+	forward()
+	left()
+	forward()
+	if (bumpL==1 && bumpR==1)
+		grab()
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}	
+	forward()
+	right()
+	forward()
+	forward()
+	left()
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	if (bumpers hit)
+		dropball()	
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}
+}
 
-
+void rightPath
+{
+	//BALL 9
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	if (bumpL==1 && bumpR==1)
+		grab()
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	if (bumpers hit)
+		dropball()	
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}
+	//BALL 3
+	forward()
+	forward()
+	forward()
+	left()
+	forward()
+	forward()
+	forward()
+	forward()
+	if (bumpL==1 && bumpR==1)
+		grab()
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}
+	forward()
+	forward()
+	forward()
+	forward()
+	right()
+	forward()
+	forward()
+	forward()
+	forward()
+	if (bumpers hit)
+		dropball()	
+	else 
+	{
+		backward()
+		//adjust
+		forward()	
+	}
+	//BALL 15
+	forward()
+	right()
+	forward()
+	forward()
+	if (bumpL==1 && bumpR==1)
+		grab()
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}
+	forward()
+	forward()
+	left()
+	forward()
+	if (bumpers hit)
+		dropball()	
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}		
+	//BALL 11
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	right()
+	forward()
+	forward()
+	if (bumpL==1 && bumpR==1)
+		grab()
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}
+	forward()
+	forward()
+	left()
+	forward()
+	forward()
+	forward()
+	forward()
+	forward()
+	if (bumpers hit)
+		dropball()	
+	else
+	{		
+		backward()
+		//adjust
+		forward()	
+	}
+	//BALL 12
+	forward()
+	forward()
+	forward()
+	forward()
+	right()
+	forward()
+	forward()
+	if (bumpL==1 && bumpR==1)
+		grab()
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}
+	forward()
+	forward()
+	left()
+	forward()
+	forward()
+	forward()
+	forward()
+	if (bumpers hit)
+		dropball()	
+	else 
+	{
+		backward()
+		//adjust
+		forward()
+	}
+}
 
 
 void setup() {
@@ -362,26 +846,25 @@ void setup() {
 
 
 
-void loop() {
-int cycle = 0; // Used to be able to make sure that no collisions occur
+/*void loop 
+{
 
-//If we are using the hard coding method, this will be the format we will use.
-//switch(cycle){
-//  case //number
-//    if(start_position == 1){
-//      //path
-//     }
-//     
-//     else if(start_position == 2){
-//     //second path
-//     }
-//
-//    else //Third Start Position{
-//      // third path
-//     }
-//    
-//
-}
+int cycle = 0; // Used to be able to make sure that no collisions occur
+int position=whichStart()
+if (position!=0)          //IR sensor worked
+	if(position == 1)
+    leftPath()
+  else if(position == 2)
+    centerPath()
+  else if(position == 3)
+    rightPath()
+else                    //check position based on other robots
+  position= planB()   
+  
+      
+	
+
+}*/
 
 
   
